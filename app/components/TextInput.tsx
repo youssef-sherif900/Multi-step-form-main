@@ -17,15 +17,15 @@ function TextInput({
   required
 }: inputProps) {
   return (
-    <div className="py-3">
+    <div className="py-2 md:py-3">
       <div className="flex justify-between">
-        <label className="text-md font-medium text-blue-900 py-2">
+        <label className="md:text-base text-sm font-medium text-blue-900 md:py-2">
           {label}
         </label>
-        <p className="text-red-600 py-2">{error}</p>
+        <p className="text-red-600 mr-1 md:mr-0 md:text-base text-sm font-medium md:py-2">{error}</p>
       </div>
       <input
-        className="placeholder:font-semibold p-2 w-[450px] h-12 border-[1px] border-gray-300 rounded-md
+        className="placeholder:font-semibold p-2 w-[275px] h-10 md:w-[450px] md:h-12 border-[1px] border-gray-300 rounded-md
          required:border-2 required:outline-none required:border-red-600 required:ring-0
           focus:border-2 focus:border-purple-600 focus:ring-0 focus:outline-none
           "

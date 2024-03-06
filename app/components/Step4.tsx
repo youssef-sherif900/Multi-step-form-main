@@ -4,6 +4,10 @@ import Heading from "@/app/components/Heading";
 import { cardState, serviceState, subscriptionState } from "@/app/hooks/subscription";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import Frame from "./Frame";
+import MobileFrame from "./MobileFrame";
+import MobileTab from "./MobileTab";
+import BackMob from "./BackMob";
 
 function Step4({onSubmit}:{onSubmit:()=>void}) {
     const card = useSelector(cardState);
@@ -12,12 +16,13 @@ function Step4({onSubmit}:{onSubmit:()=>void}) {
     const servArr= ["Online service","Larger storage","Customizable profile"]
     let serviceTotal:number = 0
     return (
-      <div className="relative px-20 py-10 h-full">
+      <Frame>
+        <MobileFrame>
         <Heading
           title="Finishing up"
           desc="Double-check everything look OK before confirming."
         />
-        <div className="bg-gray-100 mt-8 w-[450px] rounded-md">
+        <div className="bg-gray-100 mt-4 md:mt-8 md:w-[450px] rounded-md">
           <div className="flex justify-between items-center p-3">
             <div>
               <h3 className="font-bold text-blue-900">
@@ -51,10 +56,17 @@ function Step4({onSubmit}:{onSubmit:()=>void}) {
             <h2 className="text-[#483EFF] font-bold text-xl">+{card.price+serviceTotal}{sub==="Yearly"?"/yr":"/mo"}</h2>
           </div>
         <Back href="/step2/step3" />
-        <Link className="absolute bottom-10 right-16" href="">
+        <Link className="hidden md:block absolute bottom-10 right-16" href="">
       <button onClick={onSubmit} type="submit" className="w-[125px] h-12 bg-[#483EFF] rounded-md text-white font-semibold">Confirm</button>
       </Link>
-      </div>
+      </MobileFrame>
+      <MobileTab>
+      <Link className="absolute right-6 top-3" href="">
+      <button onClick={onSubmit} type="submit" className="w-[125px] h-12 bg-[#483EFF] rounded-md text-white font-semibold">Confirm</button>
+      </Link>
+      <BackMob href="/step2/step3" />
+      </MobileTab>
+      </Frame>
     );
   }
   

@@ -1,7 +1,7 @@
 function BgSidebarDesktop() {
   return (
     <svg
-      className="absolute"
+      className="absolute hidden md:flex"
       xmlns="http://www.w3.org/2000/svg"
       width="274"
       height="568"

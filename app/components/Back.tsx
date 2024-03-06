@@ -7,7 +7,7 @@ type BackProps = {
 function Back({href}:BackProps) {
   return (
     <Link
-      className="font-semibold text-gray-400 absolute bottom-10 left-16 mb-2"
+      className="hidden md:block font-semibold text-gray-400 absolute bottom-10 left-16 mb-2"
       href={href}
     >
       Go Back
